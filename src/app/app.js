@@ -3,6 +3,7 @@ angular.module( 'billify', [
   'templates-common',
   'billify.home',
   'billify.about',
+  'billify.clients',
   'billify.invoices',
   'ui.router'
 ])
