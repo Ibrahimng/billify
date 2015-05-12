@@ -1,10 +1,11 @@
 angular.module( 'billify.clients', [
   'ui.router',
   'placeholders',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'billify.filters'
 ])
 
-.config(function config( $stateProvider ) {
+.config(function config($stateProvider) {
   $stateProvider.state( 'clients', {
     url: '/clients',
     views: {
