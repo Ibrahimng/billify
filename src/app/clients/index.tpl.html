@@ -5,9 +5,9 @@
   <table class="table table-striped">
     <tr ng-repeat="client in clients">
       <td>{{client.name}}</td>
-      <td><code>{{client.address}}</code></td>
+      <td ng-bind-html="client.address | simple_format"></td>
       <td>
-        <button type="button" class="btn" ng-click="removeClient($index)">Remove Client</button>
+        <button type="button" class="btn" ng-click="removeClient($index)">Remove</button>
       </td>
     </tr>
     <tr>
