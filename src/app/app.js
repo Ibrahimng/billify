@@ -1,3 +1,5 @@
+angular.module('billify.filters', []);
+
 angular.module( 'billify', [
   'templates-app',
   'templates-common',
@@ -5,6 +7,7 @@ angular.module( 'billify', [
   'billify.about',
   'billify.clients',
   'billify.invoices',
+  'billify.filters',
   'ui.router'
 ])
 
