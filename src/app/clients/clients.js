@@ -18,27 +18,28 @@ angular.module( 'billify.clients', [
   });
 })
 
-.controller( 'ClientsCtrl', function ($scope) {
+.controller( 'ClientsCtrl', function ($scope, Client) {
 
-  var saveClients = function() {
-    localStorage.setItem('clients', JSON.stringify($scope.clients));
-    console.log('saving', $scope.clients);
+  var newClient = function() {
+    $scope.newClient = { name:'', address:'' };
   };
 
-  $scope.clients = JSON.parse(localStorage.getItem('clients', $scope.clients, JSON.stringify([]))) || [];
+  var loadClients = function() {
+    $scope.clients = Client.findAll();
+  };
 
-  $scope.newClient = { name:'', address:'' };
+  newClient();
+  loadClients();
 
   $scope.addClient = function() {
-    $scope.clients.push(_.clone($scope.newClient));
-    saveClients();
+    Client.add(_.clone($scope.newClient));
+    newClient();
+    loadClients();
   };
 
   $scope.removeClient = function(index) {
-    delete $scope.clients[index];
-    $scope.clients = _.compact($scope.clients);
-    saveClients();
+    Client.remove(id);
+    loadClients();
   };
-
 })
 ;

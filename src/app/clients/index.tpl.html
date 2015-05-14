@@ -7,7 +7,7 @@
       <td>{{client.name}}</td>
       <td ng-bind-html="client.address | simple_format"></td>
       <td>
-        <button type="button" class="btn" ng-click="removeClient($index)">Remove</button>
+        <button type="button" class="btn" ng-click="removeClient(client.id)">Remove</button>
       </td>
     </tr>
     <tr>
