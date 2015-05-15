@@ -3,7 +3,7 @@
     Clients
   </h1>
   <table class="table table-striped">
-    <tr ng-repeat="client in clients">
+    <tr ng-repeat="client in clients track by $index">
       <td>{{client.name}}</td>
       <td ng-bind-html="client.address | simple_format"></td>
       <td>

@@ -37,7 +37,7 @@ angular.module( 'billify.clients', [
     loadClients();
   };
 
-  $scope.removeClient = function(index) {
+  $scope.removeClient = function(id) {
     Client.remove(id);
     loadClients();
   };
