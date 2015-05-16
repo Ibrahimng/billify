@@ -13,10 +13,10 @@ angular.module( 'billify.invoices', [
         templateUrl: 'invoices/index.tpl.html'
       }
     },
-    data: { pageTitle: 'Invoice' }});
-
-  $stateProvider.state( 'invoices', {
-    url: '/invoice/new',
+    data: { pageTitle: 'Invoice' }}
+  )
+  .state( 'invoices.new', {
+    url: '/new',
     views: {
       "main": {
         controller: 'NewInvoiceCtrl',
@@ -28,7 +28,7 @@ angular.module( 'billify.invoices', [
 })
 
 .controller( 'InvoicesCtrl', function($scope) {
-  $scope.invoices = JSON.parse(localStorage.getValue('invoices') || "[]");
+  $scope.invoices = JSON.parse(localStorage.getItem('invoices') || "[]");
 })
 .controller( 'NewInvoiceCtrl', function InvoicesCtrl( $scope ) {
   // This is simple a demo for UI Boostrap.
