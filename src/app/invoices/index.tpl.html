@@ -1,0 +1,14 @@
+<div class="row">
+  <h1 class="page-header">
+    Invoices
+  </h1>
+  <table class="table table-striped">
+    <tr ng-repeat="invoice in invoices track by $index">
+      <td>{{invoice.date}}</td>
+      <td>{{invoice.client.name}}</td>
+      <td>{{invoice.sum_brutto}}</td>
+    </tr>
+  </table>
+  <a href="#invoice/new" class="btn">New invoice</a>
+</div>
+
