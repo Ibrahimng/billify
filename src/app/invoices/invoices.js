@@ -15,8 +15,8 @@ angular.module( 'billify.invoices', [
     },
     data: { pageTitle: 'Invoice' }}
   )
-  .state( 'invoices.new', {
-    url: '/new',
+  .state( 'invoices-new', {
+    url: '/invoices/new',
     views: {
       "main": {
         controller: 'NewInvoiceCtrl',
