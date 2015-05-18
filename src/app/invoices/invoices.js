@@ -30,7 +30,7 @@ angular.module( 'billify.invoices', [
 .controller( 'InvoicesCtrl', function($scope) {
   $scope.invoices = JSON.parse(localStorage.getItem('invoices') || "[]");
 })
-.controller( 'NewInvoiceCtrl', function InvoicesCtrl( $scope ) {
+.controller( 'NewInvoiceCtrl', function InvoicesCtrl( $scope, Client ) {
   // This is simple a demo for UI Boostrap.
   $scope.lineItems = [
     { title: 'AngularJS Entwicklung',
@@ -43,6 +43,7 @@ angular.module( 'billify.invoices', [
       pricePerUnit: 25 }
   ];
 
+  $scope.clients = Client.findAll();
   $scope.sumNetto = function() {
     return _.reduce($scope.lineItems, function(akk, item) {
       return akk + 1 * (item.units * item.pricePerUnit);
