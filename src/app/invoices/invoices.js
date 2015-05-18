@@ -44,6 +44,7 @@ angular.module( 'billify.invoices', [
   ];
 
   $scope.clients = Client.findAll();
+  $scope.invoice = { clientId: _.values($scope.clients)[0].id };
   $scope.sumNetto = function() {
     return _.reduce($scope.lineItems, function(akk, item) {
       return akk + 1 * (item.units * item.pricePerUnit);

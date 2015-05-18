@@ -1,8 +1,10 @@
 <div class="row">
-  <h1 class="page-header">
-    New Invoice
-    <small>For the lazy and impatient.</small>
-  </h1>
+  <h1 class="page-header">New Invoice</h1>
+  <select ng-model="clients">
+    <option ng-selected="{{client.id == invoice.clientId}}" ng-repeat="client in clients track by $index" value="{{client.id}}">
+    {{client.name}}
+    </option>
+  </select>
   <table class="table table-striped">
     <tr ng-repeat="lineItem in lineItems" ng-class="{'animated bounceIn': lineItem.nn == true }">
       <td>
