@@ -1,6 +1,6 @@
 <div class="row">
   <h1 class="page-header">New Invoice</h1>
-  <select ng-model="invoice.clientId">
+  <select ng-model="invoice.clientId" class="form-control">
     <option ng-selected="{{client.id == invoice.clientId}}" ng-repeat="client in clients track by $index" value="{{client.id}}">
     {{client.name}}
     </option>
