@@ -51,6 +51,12 @@ angular.module( 'billify.invoices', [
     }, 0);
   };
 
+  $scope.saveInvoice = function() {
+    $scope.invoices.push($scope.invoice);
+    localeStorage.setItem('invoices', JSON.stringify($scope.invoices));
+    console.log('invoice saved');
+  },
+
   $scope.addItem = function() {
     $scope.lineItems.push({
       title: 'New item',
